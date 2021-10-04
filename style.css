@@ -1,123 +1,836 @@
-* {  
-    /* ginagamit ito para mawala yung margin at padding ito nayung bago nalagay sakanya system */
-       margin: 0;
-       padding: 0;
-       box-sizing: border-box;
-   }
+*{
+margin: 0;
+padding: 0;
+box-sizing:border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: linen;
+}
+.main-container{
+    max-width: 1366px;
+    margin: auto;
+    height: 4200px;
+    overflow: hidden;
+  
    
-   body{
-       /* ito naman para sa font nya para mas gumanada yung mga letters */
-       font-family: Arial, Helvetica, sans-serif;
-       background-color: #ffffff;
-   }
-
-   .main-container{
-    padding: 20px 40px;
-    /* ang display f:flex; para mag assign box agad sha yung box magiging inline agad cla */
-    display: flex;
 }
-
-
-.content{
-    padding: 10px 30px;
-    order: 2;
-    flex: 2;
-    position: static;
-    margin-left: 250px; /* Same width as the sidebar + left position in px */
-}
-.content h1 {
-    text-align: center;
-}
-
-.content h3{
-    margin-top: 10px;
-}
-
-.navigition {
-    /* padding-right: 10px;
-    border-right:3px solid;
-    order: 1;
-    background-color: #ccc;
-    margin-top: 10px; */
-    width: 300px;
-    height: auto;
-  position:fixed;
-  z-index: 1;
-  top: 20px;
-  left: 10px;
-  background: #eee;
-  overflow-x: hidden;
-  padding: 8px 0;
-
+.slider{
+    max-width: 1380px;
+    max-height: 618px;
+    margin: 10px auto;
+    height: 618px;
     
+   
 }
-
-
-
-ul {
-    
-    margin: 0;
-    padding: 20 0 0 0 ;
-    list-style: none;
+.img-slide{
+    width:100%;
+    height:  615px;
+    filter: brightness(72%);
+    -webkit-filter: brightness(72%);
+    -moz-filter: brightness(72%);
+}
+/* Slideshow container */
+.slideshow-container {
+    max-width:100%;
     position: relative;
-    width: 100%;
-   
-    height: auto;
+    max-height: 618px;
+    height: 618px;
   }
   
-  li a {
-    
-    display: block;
-    padding: 10px 50px;
-    color: #4d4e53;
-    text-decoration: none;
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+  }
+  /* Next & previous buttons */
+  .prev, .next {
     cursor: pointer;
-  }
-
-  a:hover{
-      background-color: green;
-      color: #ffffff;
-  }
-
-  p{
-      margin-top: 10px;
-  }
-
-  
-  code{
-    display: block;
-    text-align: left;
-    white-space: pre-line;
-    position: relative;
-    word-break: normal;
-    word-wrap: normal;
-    line-height: 2;
-    background-color: #f7f7f7;
-    padding: 15px;
-    margin: 10px;
-    border-radius: 5px;
-  }
-
-  #main-doc {
     position: absolute;
-    margin-left: 10px;
-    padding: 20px;
-    margin-bottom: 15px;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    transition: 0.6s ease;
+    border-radius:50%;
+    user-select: none;
+  }
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius:50%;
+  }
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: #3BA3EF;
+  }
+  /* Caption text */
+  .text {
+    color: #f2f2f2;
+    font-size: 36px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 200px;
+    width: 100%;
+    text-align: left;
+    margin-left: 50px;
   }
 
-  @media only screen and (max-width: 400px) {
-   
-    code {
-      margin-left: -20px;
-      width: 100%;
-      padding: 15px;
-      padding-left: 10px;
-      padding-right: 45px;
-      min-width: 233px;
-    }
-    #main-doc {
-        position: relative;
-        margin-left: 0px;
-        margin-top: 50px;
-    }
+  .slide-text{
+    font-size: 24px;
   }
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  .btn-slide{
+    position: relative;
+    height: 52px;
+    width: 195px;
+    background-color: #3BA3EF;
+    color: #fff;
+    border-radius: 15px;
+    border: none;
+  }
+  .dot-con{
+    position: relative;
+    bottom: 60px;
+  }
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #3BA3EF;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+   
+  }
+  .active, .dot:hover {
+    background-color: #fff;
+  }
+  /* Fading animation */
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  @-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+
+
+.about-us{
+    max-width: 1380px;
+    max-height: 450px;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0;
+    
+
+}
+
+.about-us .about-logo,.about-discription{
+    max-width: 674px;
+    max-height: 572px;
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    margin:  0 auto;
+ 
+}
+
+.title-us{
+    text-align: center;
+    font-size: 32px;
+    margin:10px;
+}
+.title-dis{
+    text-align: center;
+    font-size: 20px;
+    margin:20px;
+}
+
+.portfolio{
+    max-width: 1380px;
+    max-height: 684px;
+    margin:  auto;
+    height: 100%;
+    
+   background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;   
+}
+
+.title-por{
+  text-align: center;
+   font-size: 42px;
+   display:block;
+     margin: 40px 0 ;
+     background-color: #3BA3EF;
+}
+.portfolio-box1,.portfolio-box2,.portfolio-box3{
+max-width: 430px;
+max-height: 234px;
+width: 100%;
+height: 100%;
+margin: 10px auto;
+}
+
+
+.tab-container{
+    max-width:1380px;
+    width: 100%;
+    max-height: 684px;
+    margin: 10px auto;
+    height: 100%;
+    padding: 20px;
+
+}
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #3BA3EF;
+    width: 100%;
+    margin: 10px 0;
+  }
+  
+  /* Style the buttons inside the tab */
+  .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 20px;
+    color: #fff;
+   
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: #ccc;
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    font-size: 16px;
+    max-height: 200px;
+    height: 100%;
+  }
+
+
+
+.service{
+    max-width: 1380px;
+    max-height: 1200px;
+    margin:  auto;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.service-box{
+    max-width: 400px;
+    max-height: 250px;
+    width: 100%;
+    height: 100%;
+    background-color: #3BA3EF;
+    margin: 10px auto;
+
+}
+
+.icon-s{
+  width:100%;
+  height:150px
+}
+
+.service-dis{
+    font-size: 24px;
+    text-align: center;
+    color: #fff;
+}
+
+
+
+.contact{
+    max-width: 1380px;
+    max-height: 900px;
+    margin:  auto;
+    height: 100%;
+    background-color:  #3BA3EF;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; 
+    padding: 10px;
+}
+
+.contact-box{
+  max-width: 650px;
+  width: 100%;
+  max-height: 600px;
+  height: 100%;
+  margin: 5px auto;
+  height: 100%;
+ 
+  display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+form{
+  display: flex;
+  flex-wrap: wrap;
+  padding:0 ;
+}
+.form-text{
+  max-height: 150px;
+  height: 100%;
+  max-width: 300px;
+  width: 100%;
+  margin: 10px auto;
+}
+.text-area{
+  max-height: 300px;
+  height: 100%;
+  max-width:630px;
+  width: 100%;
+  margin: 10px  auto;
+}
+
+.contact-box input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  height: 100%;
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+.address{
+  max-width: 290px;
+  max-height: 250px;
+  width:  100%;
+  height: 100%;
+ 
+  margin: auto ;
+}
+
+.div-btn{
+  max-width:300px;
+  max-height: 100px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+.btn-contact{
+  position: relative;
+  height: 60px;
+  width: 350px;
+  background-color: #f49e1b;
+  color: #fff;
+  border-radius: 15px;
+  border: none;
+  margin:  auto;
+}
+
+.map{
+  border:0;
+  width:100%; 
+  height:300px;
+  margin: 10px auto;
+}
+
+
+
+.address-info-1{
+  font-size: 24px; color: #fff; margin-bottom: 10px;
+}
+
+.address-info-2{
+
+  font-size: 18px; color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 600px) {
+
+
+  .main-container{
+    max-width: 600px;
+    margin: auto;
+    height: 8000px;
+    overflow: hidden;
+  
+   
+}
+.slider{
+    max-width: 600px;
+    max-height: 618px;
+    margin: 10px auto;
+    height: 618px;
+    padding: 0 10px;
+   
+    
+   
+}
+.img-slide{
+    width:100%;
+    height:  615px;
+    filter: brightness(72%);
+    -webkit-filter: brightness(72%);
+    -moz-filter: brightness(72%);
+}
+/* Slideshow container */
+.slideshow-container {
+    max-width:100%;
+    position: relative;
+    max-height: 618px;
+    height: 618px;
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+  }
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius:50%;
+    user-select: none;
+  }
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius:50%;
+  }
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: #3BA3EF;
+  }
+  /* Caption text */
+  .text {
+    color: #f2f2f2;
+    font-size: 24px;
+    position: absolute;
+    bottom:60px;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+   
+  }
+
+  .slide-text{
+    font-size: 18px;
+  }
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  .btn-slide{
+    position: relative;
+    height: 52px;
+    width: 150px;
+    background-color: #3BA3EF;
+    color: #fff;
+    border-radius: 15px;
+    border: none;
+  }
+  .dot-con{
+    position: relative;
+    bottom: 60px;
+  }
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+    margin: 0 2px;
+    background-color: #3BA3EF;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+   
+  }
+  .active, .dot:hover {
+    background-color: #fff;
+  }
+  /* Fading animation */
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  @-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+
+
+  .about-us{
+    max-width: 1380px;
+    max-height: 620px;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0 10px;
+   
+
+}
+
+.about-us .about-discription{
+    max-width: 670px;
+    max-height:420px;
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    margin:  auto;
+    order: 1;
+}
+
+.about-us .about-logo{
+  max-width: 670px;
+  max-height:300px;
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  margin:  auto;
+  order: 2;
+}
+
+.title-us{
+    text-align: center;
+    font-size: 32px;
+    margin:10px;
+}
+.title-dis{
+    text-align: center;
+    font-size: 12px;
+    margin:20px;
+}
+
+.portfolio{
+    max-width: 1380px;
+    max-height: 1300px;
+    margin:  0 10px;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;  
+    padding: 0 10px;
+}
+
+.title-por{
+  text-align: center;
+   font-size: 32px;
+   display:block;
+     margin: 40px 0 ;
+     background-color: #3BA3EF;
+}
+.portfolio-box1,.portfolio-box2,.portfolio-box3{
+max-width: 430px;
+max-height: 200px;
+width: 100%;
+height: 100%;
+margin: 5px auto;
+}
+
+
+.tab-container{
+    width: 100%;
+    max-height: 684px;
+    height: 100%;
+    padding: 5px 0;
+
+}
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #3BA3EF;
+    
+    
+  }
+  
+  /* Style the buttons inside the tab */
+  .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px auto;
+    transition: 0.3s;
+    font-size: 20px;
+    color: #fff;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ddd;
+    
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: #ccc;
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    font-size: 14px;
+    max-height: 300px;
+    height: 100%;
+  }
+
+
+
+.service{
+    max-width: 1380px;
+    max-height: 2100px;
+    margin:  0 10px;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0 10px;
+    
+}
+
+.service-box{
+    max-width: 350px;
+    max-height: 200px;
+    width: 100%;
+    height: 100%;
+    background-color: #3BA3EF;
+    margin: 5px auto;
+
+}
+.icon-s{
+  width:100%;
+  height:150px;
+}
+
+
+.service-dis{
+    font-size: 15px;
+    text-align: center;
+    color: #fff;
+}
+
+
+
+.contact{
+    max-width: 1380px;
+    max-height: 1900px;
+    margin:  0 10px;
+    height: 100%;
+    background-color:  #3BA3EF;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; 
+    padding: 10px;
+   
+}
+
+.contact-box{
+  max-width: 650px;
+  width: 100%;
+  max-height: 800px;
+  height: 100%;
+  margin: auto;
+  height: 100%;
+ 
+  display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+form{
+  display: flex;
+  flex-wrap: wrap;
+  padding:0 ;
+}
+.form-text{
+  max-height: 150px;
+  height: 100%;
+  max-width: 100%;
+  width: 100%;
+  margin: 10px 10px;
+}
+.text-area{
+  max-height: 300px;
+  height: 100%;
+  max-width:630px;
+  width: 100%;
+  margin: auto;
+  padding: 12px;
+}
+
+.contact-box input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  height: 100%;
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+.address{
+  max-width: 250px;
+  max-height: 100px;
+  width:  100%;
+  height: 100%;
+ 
+  margin: 0 10px ;
+}
+
+.div-btn{
+  max-width:300px;
+  max-height: 100px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+.btn-contact{
+  position: relative;
+  height: 60px;
+  width: 100%;
+  background-color: #f49e1b;
+  color: #fff;
+  border-radius: 15px;
+  border: none;
+  margin:  auto;
+}
+.map{
+  border:0;
+  width:100%; 
+  height:250px;
+}
+
+.address-info-1{
+  font-size:18px; color: #fff; ;
+}
+
+.address-info-2{
+
+  font-size: 14px; color: #fff;
+}
+
+
+}
+
+
